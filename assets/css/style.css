@@ -1,0 +1,88 @@
+/* =====================
+   Global Resets & Base
+   ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =====================
+   Scroll Progress Bar
+   ===================== */
+#scroll-progress {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* =====================
+   Navbar blur on scroll
+   ===================== */
+header {
+  transition: box-shadow 0.3s ease;
+}
+
+/* =====================
+   Article card hover
+   ===================== */
+article img {
+  transition: transform 0.7s ease;
+}
+article:hover img {
+  transform: scale(1.05);
+}
+
+/* =====================
+   WhatsApp Float Button
+   ===================== */
+a[href*="wa.me"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a[href*="wa.me"]:hover {
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* =====================
+   Admin: TinyMCE override
+   ===================== */
+.tox-tinymce {
+  border-radius: 0.75rem !important;
+  border-color: #e5e7eb !important;
+}
+
+/* =====================
+   Utility: Playfair helper
+   ===================== */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* =====================
+   Responsive images
+   ===================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================
+   Article content styling
+   (for rendered HTML from TinyMCE)
+   ===================== */
+.article-content h2 { font-size: 1.75rem; font-weight: 700; margin: 1.5rem 0 0.75rem; color: #111827; }
+.article-content h3 { font-size: 1.4rem; font-weight: 600; margin: 1.25rem 0 0.5rem; color: #1f2937; }
+.article-content p  { margin-bottom: 1.25rem; line-height: 1.8; color: #374151; font-size: 1.05rem; }
+.article-content ul, .article-content ol { margin: 1rem 0 1rem 1.5rem; color: #374151; }
+.article-content li { margin-bottom: 0.5rem; line-height: 1.7; }
+.article-content img { border-radius: 1rem; margin: 1.5rem 0; width: 100%; object-fit: cover; }
+.article-content a  { color: #2563eb; text-decoration: underline; }
+.article-content blockquote {
+  border-left: 4px solid #2563eb;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background: #eef1f5;
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: #4b5563;
+  font-style: italic;
+}

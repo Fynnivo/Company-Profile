@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRNT | Digital Print Journal &amp; Product Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<meta name="disabled-font-classes" content="font-roboto,font-montserrat,font-poppins,font-merriweather,font-bricolage,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-quicksand,font-newsreader,font-google-sans-flex,font-oswald,font-dm-sans,font-cormorant,font-instrument-serif,font-jakarta,font-geist,font-playfair"><meta name="aura-font-heading-class" content="font-nunito"><meta name="aura-font-body-class" content="font-nunito"><meta name="aura-font-heading-label" content="Nunito"><meta name="aura-font-body-label" content="Nunito"><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-[#f4f4f2] text-[#1f2937] antialiased overflow-x-hidden selection:bg-[#2563eb] selection:text-white" style="font-family:'Geist',sans-serif;">
+  <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.025] mix-blend-multiply" style="background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');"></div>
+
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-[#2563eb] z-[120] origin-left" style="transform:scaleX(0);"></div>
+
+  <div class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+    <header class="w-full max-w-[78rem] rounded-full border border-[#1f2937]/10 bg-white/80 backdrop-blur-xl shadow-[0_0.5rem_2rem_rgba(15,23,42,0.06)] px-5 md:px-7 h-16 flex items-center justify-between">
+      <a href="#" class="text-lg md:text-xl tracking-tight uppercase text-[#111827] font-nunito font-semibold">PRNT</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#products" class="text-sm text-[#1f2937]/65 hover:text-[#2563eb] uppercase tracking-widest transition-colors font-nunito">Products</a>
+        <a href="#services" class="text-sm text-[#1f2937]/65 hover:text-[#2563eb] uppercase tracking-widest transition-colors font-nunito">Services</a>
+        <a href="#articles" class="text-sm text-[#1f2937]/65 hover:text-[#2563eb] uppercase tracking-widest transition-colors font-nunito">Articles</a>
+        <a href="#contact" class="text-sm text-[#1f2937]/65 hover:text-[#2563eb] uppercase tracking-widest transition-colors font-nunito">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button aria-label="Search" class="hidden sm:flex items-center justify-center text-[#1f2937] hover:text-[#2563eb] transition-colors">
+          <iconify-icon icon="solar:magnifer-linear" class="text-xl" style="stroke-width:1.5;"></iconify-icon>
+        </button>
+        <a href="#" class="rounded-full bg-[#111827] text-white text-xs md:text-sm uppercase tracking-widest px-5 py-2.5 hover:bg-[#2563eb] transition-all duration-300 flex items-center gap-2 font-nunito">
+          Request Quote
+          <iconify-icon icon="solar:clipboard-check-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+        </a>
+      </div>
+    </header>
+  </div>
+
+  <main class="">
+    <section class="relative min-h-screen flex items-center pt-28 pb-20">
+      <div class="absolute top-0 right-0 bottom-0 left-0" style="background-image:linear-gradient(to right, rgba(31,41,55,0.04) 1px, transparent 1px),linear-gradient(to bottom, rgba(31,41,55,0.04) 1px, transparent 1px);background-size:3rem 3rem"></div>
+      <div class="max-w-[78rem] mx-auto px-6 w-full relative z-10">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div class="">
+            <div class="inline-flex items-center gap-2 rounded-full border border-[#2563eb]/20 bg-white/70 px-4 py-2 text-xs uppercase tracking-widest text-[#374151] mb-7 font-nunito">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full rounded-full bg-[#2563eb] opacity-60 animate-ping"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-[#2563eb]"></span>
+              </span>
+              Professional Digital Print Journal
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.9] uppercase text-[#111827] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+              Digital Print
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#111827] to-[#2563eb] font-nunito font-semibold">Products, Systems &amp; Insight</span>
+            </h1>
+            <p class="mt-8 text-xl md:text-2xl text-[#4b5563] leading-relaxed max-w-2xl font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+              A refined showcase for modern print solutions, premium product catalogs, and editorial guidance for brands that care about clarity, consistency, and production quality.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="#products" class="rounded-full bg-[#111827] text-white px-8 py-4 text-sm uppercase tracking-widest hover:bg-[#2563eb] transition-all duration-300 text-center font-nunito">View Products</a>
+              <a href="#articles" class="rounded-full border border-[#111827]/15 text-[#111827] px-8 py-4 text-sm uppercase tracking-widest hover:border-[#2563eb]/40 hover:text-[#2563eb] transition-all duration-300 text-center flex items-center justify-center gap-2 font-nunito">
+                <iconify-icon icon="solar:document-text-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+                Read Articles
+              </a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-2 rounded-[2rem] blur-2xl bg-gradient-to-b from-[#2563eb]/20 to-transparent"></div>
+            <div class="relative rounded-[1.5rem] overflow-hidden border border-[#111827]/10 bg-[#0f172a] shadow-[0_1.5rem_4rem_rgba(15,23,42,0.22)]">
+              <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?auto=format&fit=crop&q=80" alt="Digital print production" class="w-full h-full object-cover opacity-85 mix-blend-luminosity">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/30 to-transparent"></div>
+              <div class="absolute inset-x-0 bottom-0 p-8">
+                <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs uppercase tracking-widest text-white/75 mb-4 backdrop-blur-md font-nunito">
+                  Featured Collection
+                </div>
+                <h2 class="text-3xl md:text-4xl tracking-tight text-white leading-tight font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+                  Print Systems for Packaging, Signage &amp; Brand Collateral
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative bg-[#111827] py-28 rounded-t-[3rem] -mt-8 overflow-hidden">
+      <div class="absolute inset-0 opacity-25" style="background-image:linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);background-size:4rem 4rem;mask-image:radial-gradient(ellipse at center, black, transparent 72%);"></div>
+      <div class="max-w-[68rem] mx-auto px-6 text-center relative z-10">
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <span class="h-px w-10 bg-[#2563eb]"></span>
+          <span class="text-xs uppercase tracking-[0.3em] text-[#60a5fa] font-nunito">Print Standards</span>
+          <span class="h-px w-10 bg-[#2563eb]"></span>
+        </div>
+        <h2 class="text-5xl md:text-6xl lg:text-7xl tracking-tight uppercase text-white leading-[0.92] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+          Built for
+          <span class="text-[#60a5fa] font-nunito font-semibold">Precision</span>,
+          Quality &amp; Delivery
+        </h2>
+        <p class="mt-8 text-xl md:text-2xl text-white/65 max-w-3xl mx-auto leading-relaxed font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+          From premium business materials to large-format applications, our platform presents digital print with the structure, confidence, and editorial clarity expected by modern teams.
+        </p>
+      </div>
+    </section>
+
+    <section id="products" class="bg-[#111827] px-6 pb-28">
+      <div class="max-w-[88rem] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div class="">
+            <p class="text-xs uppercase tracking-[0.25em] text-[#60a5fa] mb-3 font-nunito">Product Catalog</p>
+            <h2 class="text-4xl md:text-6xl tracking-tight uppercase text-white leading-[0.95] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Featured Print Products</h2>
+          </div>
+          <p class="text-base md:text-lg text-white/55 max-w-2xl font-nunito">
+            Product-focused presentation for clients comparing formats, turnaround expectations, and intended use across commercial print categories.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <article class="group rounded-2xl overflow-hidden border border-white/8 bg-[#1f2937] min-h-[26rem] relative">
+            <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80" alt="Business cards" class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-luminosity group-hover:opacity-55 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/55 to-transparent"></div>
+            <div class="relative p-8 h-full flex flex-col justify-end">
+              <div class="w-10 h-10 rounded-full border border-[#60a5fa]/50 bg-[#2563eb]/15 text-[#60a5fa] flex items-center justify-center mb-6">
+                <iconify-icon icon="solar:card-linear" class="text-xl" style="stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="text-3xl tracking-tight uppercase text-white mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Business Cards</h3>
+              <p class="text-white/60 text-base leading-relaxed mb-6 font-nunito">Premium short-run cards with sharp color, coated finishes, and brand-consistent stock options.</p>
+              <div class="flex items-center justify-between text-xs uppercase tracking-widest text-white/65">
+                <span class="font-nunito">From 100 units</span>
+                <span class="text-[#60a5fa] font-nunito">24–48h</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl overflow-hidden border border-white/8 bg-[#1f2937] min-h-[26rem] relative">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80" alt="Brochures" class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-luminosity group-hover:opacity-55 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/55 to-transparent"></div>
+            <div class="relative p-8 h-full flex flex-col justify-end">
+              <div class="w-10 h-10 rounded-full border border-[#60a5fa]/50 bg-[#2563eb]/15 text-[#60a5fa] flex items-center justify-center mb-6">
+                <iconify-icon icon="solar:document-linear" class="text-xl" style="stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="text-3xl tracking-tight uppercase text-white mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Brochures</h3>
+              <p class="text-white/60 text-base leading-relaxed mb-6 font-nunito">Folded marketing pieces designed for launches, presentations, and polished sales communication.</p>
+              <div class="flex items-center justify-between text-xs uppercase tracking-widest text-white/65">
+                <span class="font-nunito">Multi-fold options</span>
+                <span class="text-[#60a5fa] font-nunito">Short runs</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl overflow-hidden border border-white/8 bg-[#1f2937] min-h-[26rem] relative">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80" alt="Packaging labels" class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-luminosity group-hover:opacity-55 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/55 to-transparent"></div>
+            <div class="relative p-8 h-full flex flex-col justify-end">
+              <div class="w-10 h-10 rounded-full border border-[#60a5fa]/50 bg-[#2563eb]/15 text-[#60a5fa] flex items-center justify-center mb-6">
+                <iconify-icon icon="solar:box-linear" class="text-xl" style="stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="text-3xl tracking-tight uppercase text-white mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Labels</h3>
+              <p class="text-white/60 text-base leading-relaxed mb-6 font-nunito">Durable label production for packaging systems, retail shelves, and product identification workflows.</p>
+              <div class="flex items-center justify-between text-xs uppercase tracking-widest text-white/65">
+                <span class="font-nunito">Water resistant</span>
+                <span class="text-[#60a5fa] font-nunito">Custom sizes</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl overflow-hidden border border-white/8 bg-[#1f2937] min-h-[26rem] relative">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80" alt="Large format signage" class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-luminosity group-hover:opacity-55 transition-all duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/55 to-transparent"></div>
+            <div class="relative p-8 h-full flex flex-col justify-end">
+              <div class="w-10 h-10 rounded-full border border-[#60a5fa]/50 bg-[#2563eb]/15 text-[#60a5fa] flex items-center justify-center mb-6">
+                <iconify-icon icon="solar:gallery-wide-linear" class="text-xl" style="stroke-width:1.5;"></iconify-icon>
+              </div>
+              <h3 class="text-3xl tracking-tight uppercase text-white mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Signage</h3>
+              <p class="text-white/60 text-base leading-relaxed mb-6 font-nunito">Large-format graphics for events, interiors, wayfinding, and branded spatial environments.</p>
+              <div class="flex items-center justify-between text-xs uppercase tracking-widest text-white/65">
+                <span class="font-nunito">Indoor &amp; outdoor</span>
+                <span class="text-[#60a5fa] font-nunito">Fast proofing</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#111827] border-y border-white/6">
+      <div class="max-w-[88rem] mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-14 items-center">
+        <div class="">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-widest text-white/70 mb-6 font-nunito">
+            Product Configurator
+          </div>
+          <h2 class="text-5xl md:text-6xl tracking-tight uppercase text-white leading-[0.92] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+            Estimate the
+            <span class="block text-[#60a5fa] font-nunito font-semibold">Right Print Setup</span>
+          </h2>
+          <p class="mt-7 text-xl text-white/60 leading-relaxed max-w-2xl font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+            A clean interface for evaluating quantity, finish, and delivery requirements before moving a job into production.
+          </p>
+          <a href="#" class="inline-flex items-center gap-2 mt-8 text-[#60a5fa] text-sm uppercase tracking-widest hover:text-white transition-colors font-nunito">
+            View specifications
+            <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+          </a>
+        </div>
+
+        <div class="w-full">
+          <div class="rounded-[1.75rem] border border-white/10 bg-[#1f2937]/80 backdrop-blur-md p-8 lg:p-10 shadow-[0_1.5rem_4rem_rgba(0,0,0,0.35)]">
+            <div class="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
+              <span class="text-sm uppercase tracking-widest text-white font-nunito">Print Brief</span>
+              <span class="text-xs uppercase tracking-widest text-white/35 font-nunito">v2.0</span>
+            </div>
+
+            <div class="space-y-8">
+              <div class="">
+                <div class="flex justify-between mb-3">
+                  <div class="">
+                    <span class="text-sm uppercase tracking-widest text-white block mb-1 font-nunito">Run Size</span>
+                    <span class="text-xs text-white/40 font-nunito">Select quantity range</span>
+                  </div>
+                  <span id="quantityValue" class="text-sm uppercase tracking-widest text-[#60a5fa] font-nunito">500</span>
+                </div>
+                <div class="relative">
+                  <input id="quantityRange" type="range" min="100" max="5000" value="500" class="w-full appearance-none bg-transparent focus:outline-none">
+                  <div class="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
+                    <div id="quantityFill" class="h-full rounded-full bg-[#2563eb]" style="width: 8.16327%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div class="">
+                  <span class="text-sm uppercase tracking-widest text-white block mb-1 font-nunito">Express Delivery</span>
+                  <span class="text-xs text-white/40 font-nunito">Priority production and dispatch</span>
+                </div>
+                <button id="deliveryToggle" class="relative w-14 h-8 rounded-full bg-white/10 transition-colors duration-300">
+                  <span id="deliveryDot" class="absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-sm transition-transform duration-300"></span>
+                </button>
+              </div>
+
+              <div class="">
+                <span class="text-sm uppercase tracking-widest text-white block mb-3 font-nunito">Product Type</span>
+                <div class="flex flex-wrap gap-3">
+                  <button class="product-pill rounded-full border border-[#2563eb] bg-[#2563eb]/10 text-[#60a5fa] px-5 py-2.5 text-xs uppercase tracking-widest font-nunito">Cards</button>
+                  <button class="product-pill rounded-full border border-white/10 text-white/60 px-5 py-2.5 text-xs uppercase tracking-widest font-nunito">Brochure</button>
+                  <button class="product-pill rounded-full border border-white/10 text-white/60 px-5 py-2.5 text-xs uppercase tracking-widest font-nunito">Label</button>
+                  <button class="product-pill rounded-full border border-white/10 text-white/60 px-5 py-2.5 text-xs uppercase tracking-widest font-nunito">Signage</button>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-white/8 bg-white/5 p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs uppercase tracking-widest text-white/50 font-nunito">Estimated Tier</span>
+                  <span class="text-xs uppercase tracking-widest text-[#60a5fa] font-nunito">Professional</span>
+                </div>
+                <div class="flex items-end justify-between gap-4">
+                  <div>
+                    <p class="text-sm text-white/55 mb-1 font-nunito">Recommended setup</p>
+                    <h3 id="recommendation" class="text-2xl tracking-tight text-white font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Premium Cards</h3>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm text-white/55 mb-1 font-nunito">Starting from</p>
+                    <h3 id="priceEstimate" class="text-2xl tracking-tight text-[#60a5fa] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">$210</h3>
+                  </div>
+                </div>
+              </div>
+
+              <button class="w-full rounded-full bg-[#2563eb] text-white py-4 text-sm uppercase tracking-widest hover:bg-white hover:text-[#111827] transition-colors flex items-center justify-center gap-2 font-nunito">
+                Generate Quote
+                <iconify-icon icon="solar:refresh-circle-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-[#f4f4f2] py-28 px-6 rounded-t-[3rem] -mt-8 relative z-10">
+      <div class="max-w-[88rem] mx-auto grid lg:grid-cols-[0.95fr_1.25fr] gap-14">
+        <div class="lg:sticky lg:top-28 h-fit">
+          <div class="inline-flex items-center gap-2 rounded-full border border-[#2563eb]/25 bg-[#2563eb]/8 px-3 py-1 text-xs uppercase tracking-widest text-[#2563eb] mb-6 font-nunito">
+            Studio Services
+          </div>
+          <h2 class="text-5xl md:text-6xl tracking-tight uppercase text-[#111827] leading-[0.92] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+            Print Support for
+            <span class="block text-[#2563eb] font-nunito font-semibold">Modern Teams</span>
+          </h2>
+          <p class="mt-7 text-xl text-[#4b5563] leading-relaxed font-nunito font-semibold">
+            Practical support across artwork review, proofing, production planning, and delivery execution for marketing, retail, and operations teams.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <article class="bg-white rounded-[1.5rem] p-5 md:p-6 border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] hover:border-[#2563eb]/20 transition-all">
+            <div class="flex flex-col sm:flex-row gap-6">
+              <div class="w-full sm:w-48 aspect-square rounded-xl overflow-hidden shrink-0">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80" alt="Artwork review" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 py-2">
+                <div class="flex items-start justify-between gap-4 mb-2">
+                  <h3 class="text-2xl tracking-tight uppercase text-[#111827] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Artwork Review</h3>
+                  <span class="text-xs uppercase tracking-widest text-[#6b7280] mt-1 font-nunito">Prepress</span>
+                </div>
+                <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">Structured checks for bleed, color consistency, file setup, and production readiness before your job reaches print.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#2563eb] hover:text-[#111827] transition-colors font-nunito">
+                  Learn more
+                  <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[1.5rem] p-5 md:p-6 border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] hover:border-[#2563eb]/20 transition-all">
+            <div class="flex flex-col sm:flex-row gap-6">
+              <div class="w-full sm:w-48 aspect-square rounded-xl overflow-hidden shrink-0">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80" alt="Campaign kits" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 py-2">
+                <div class="flex items-start justify-between gap-4 mb-2">
+                  <h3 class="text-2xl tracking-tight uppercase text-[#111827] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Campaign Kits</h3>
+                  <span class="text-xs uppercase tracking-widest text-[#6b7280] mt-1 font-nunito">Brand Rollout</span>
+                </div>
+                <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">Coordinated production of brochures, inserts, event signage, and branded materials aligned to a single launch window.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#2563eb] hover:text-[#111827] transition-colors font-nunito">
+                  Learn more
+                  <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[1.5rem] p-5 md:p-6 border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] hover:border-[#2563eb]/20 transition-all">
+            <div class="flex flex-col sm:flex-row gap-6">
+              <div class="w-full sm:w-48 aspect-square rounded-xl overflow-hidden shrink-0">
+                <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80" alt="Signage systems" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 py-2">
+                <div class="flex items-start justify-between gap-4 mb-2">
+                  <h3 class="text-2xl tracking-tight uppercase text-[#111827] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Signage Systems</h3>
+                  <span class="text-xs uppercase tracking-widest text-[#6b7280] mt-1 font-nunito">Large Format</span>
+                </div>
+                <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">Professional output for directional signage, retail displays, and event environments requiring durable visual consistency.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#2563eb] hover:text-[#111827] transition-colors font-nunito">
+                  Learn more
+                  <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#eef1f5] pt-28 pr-6 pb-28 pl-6" id="articles">
+      <div class="max-w-[88rem] mx-auto">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div class="">
+            <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3 font-nunito">Editorial Journal</p>
+            <h2 class="text-4xl md:text-6xl tracking-tight uppercase text-[#111827] leading-[0.95] font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Latest Articles on Digital Print</h2>
+          </div>
+          <p class="text-base md:text-lg text-[#4b5563] max-w-2xl font-nunito">
+            A dedicated article section covering print strategy, file preparation, material selection, and quality control for commercial teams.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <article class="bg-white rounded-[1.5rem] overflow-hidden border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80" alt="Choosing print finishes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs uppercase tracking-widest text-[#2563eb] font-nunito">Guide</span>
+                <span class="text-xs uppercase tracking-widest text-[#6b7280] font-nunito">6 min</span>
+              </div>
+              <h3 class="text-2xl tracking-tight uppercase text-[#111827] mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Choosing the Right Finish for Brand Print</h3>
+              <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">A practical overview of matte, gloss, soft-touch, and uncoated finishes and where each one performs best.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#111827] hover:text-[#2563eb] transition-colors font-nunito">
+                Read article
+                <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+              </a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[1.5rem] overflow-hidden border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80" alt="Preparing files for print" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs uppercase tracking-widest text-[#2563eb] font-nunito">Workflow</span>
+                <span class="text-xs uppercase tracking-widest text-[#6b7280] font-nunito">8 min</span>
+              </div>
+              <h3 class="text-2xl tracking-tight uppercase text-[#111827] mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">How to Prepare Files for Clean Digital Output</h3>
+              <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">Learn the essentials of resolution, bleed, color mode, and export settings to reduce delays and reprints.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#111827] hover:text-[#2563eb] transition-colors font-nunito">
+                Read article
+                <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+              </a>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-[1.5rem] overflow-hidden border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?auto=format&fit=crop&q=80" alt="Short-run print value" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs uppercase tracking-widest text-[#2563eb] font-nunito">Analysis</span>
+                <span class="text-xs uppercase tracking-widest text-[#6b7280] font-nunito">7 min</span>
+              </div>
+              <h3 class="text-2xl tracking-tight uppercase text-[#111827] mb-3 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">Why Short-Run Printing Works for Agile Teams</h3>
+              <p class="text-base text-[#4b5563] leading-relaxed mb-6 font-nunito">An editorial look at how smaller batches support testing, versioning, and more efficient campaign execution.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[#111827] hover:text-[#2563eb] transition-colors font-nunito">
+                Read article
+                <iconify-icon icon="solar:arrow-right-linear" class="text-base" style="stroke-width:1.5;"></iconify-icon>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="relative bg-[#111827] py-28 text-center rounded-t-[3rem] mt-16 overflow-hidden">
+      <div class="opacity-20 absolute top-0 right-0 bottom-0 left-0" style="background-image:linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);background-size:4rem 4rem"></div>
+      <div class="z-10 max-w-3xl mr-auto ml-auto pr-6 pl-6 relative">
+        <div class="w-12 h-px bg-[#60a5fa] mx-auto mb-8"></div>
+        <p class="text-xs uppercase tracking-[0.4em] text-[#60a5fa]/85 mb-6 font-nunito">Project Enquiries</p>
+        <h2 class="text-5xl md:text-7xl tracking-tight uppercase text-white leading-[0.9] mb-8 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">
+          Plan Your Next
+          <span class="block text-[#60a5fa] font-nunito font-semibold">Print Project</span>
+        </h2>
+        <p class="text-xl text-white/60 leading-relaxed mb-12 max-w-2xl mx-auto font-nunito font-semibold">
+          Share your format, volume, and delivery requirements to receive a clear recommendation and a professional production quote.
+        </p>
+        <form class="flex flex-col sm:flex-row max-w-xl mr-auto ml-auto gap-x-4 gap-y-4">
+          
+          <button type="submit" class="sm:w-auto uppercase hover:bg-[#2563eb] hover:text-white transition-all text-sm text-[#111827] tracking-widest font-nunito bg-white w-full rounded-full mx-48 pt-4 pr-10 pb-4 pl-10 justify-center">
+            Get Started
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-white bg-[#111827] border-white/6 border-t pt-16 pb-10">
+    <div class="max-w-[88rem] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div class="lg:col-span-2">
+          <h3 class="text-3xl tracking-tight uppercase text-white mb-4 font-nunito font-semibold" style="font-family: &quot;Playfair Display&quot;, serif;">PRNT</h3>
+          <p class="text-base text-white/50 max-w-sm leading-relaxed mb-8 font-nunito">
+            A professional digital print platform combining product presentation, editorial guidance, and practical commercial print support.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#60a5fa] hover:border-[#60a5fa]/50 transition-all">
+              <iconify-icon icon="solar:brand-linkedin-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#60a5fa] hover:border-[#60a5fa]/50 transition-all">
+              <iconify-icon icon="solar:letter-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#60a5fa] hover:border-[#60a5fa]/50 transition-all">
+              <iconify-icon icon="solar:phone-linear" class="text-lg" style="stroke-width:1.5;"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <div class="">
+          <h4 class="text-xs uppercase tracking-[0.2em] text-[#60a5fa] mb-6 font-nunito">Products</h4>
+          <ul class="space-y-3">
+            <li class=""><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Business Cards</a></li>
+            <li class=""><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Brochures</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Labels</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Signage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.2em] text-[#60a5fa] mb-6 font-nunito">Journal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Articles</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Guides</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Workflow</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Insights</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase tracking-[0.2em] text-[#60a5fa] mb-6 font-nunito">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">About</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Services</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Contact</a></li>
+            <li><a href="#" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors font-nunito">Quotes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-xs uppercase tracking-[0.2em] text-white/30 font-nunito">© 2024 PRNT Digital Print Journal. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs uppercase tracking-widest text-white/30 hover:text-white transition-colors font-nunito">Privacy</a>
+          <a href="#" class="text-xs uppercase tracking-widest text-white/30 hover:text-white transition-colors font-nunito">Terms</a>
+          <a href="#" class="text-xs uppercase tracking-widest text-white/30 hover:text-white transition-colors font-nunito">Production Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const progressBar = document.getElementById('scroll-progress');
+      const range = document.getElementById('quantityRange');
+      const fill = document.getElementById('quantityFill');
+      const value = document.getElementById('quantityValue');
+      const price = document.getElementById('priceEstimate');
+      const recommendation = document.getElementById('recommendation');
+      const toggle = document.getElementById('deliveryToggle');
+      const dot = document.getElementById('deliveryDot');
+      const pills = document.querySelectorAll('.product-pill');
+
+      let express = false;
+      let selected = 'Cards';
+
+      function updateScroll() {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? winScroll / height : 0;
+        progressBar.style.transform = 'scaleX(' + scrolled + ')';
+      }
+
+      function updateRange() {
+        const min = Number(range.min);
+        const max = Number(range.max);
+        const val = Number(range.value);
+        const percent = ((val - min) / (max - min)) * 100;
+        fill.style.width = percent + '%';
+        value.textContent = val;
+        updateEstimate();
+      }
+
+      function updateEstimate() {
+        const qty = Number(range.value);
+        let base = 120;
+        let label = 'Premium Cards';
+
+        if (selected === 'Brochure') {
+          base = 260;
+          label = 'Folded Brochure Set';
+        } else if (selected === 'Label') {
+          base = 180;
+          label = 'Custom Label Batch';
+        } else if (selected === 'Signage') {
+          base = 420;
+          label = 'Large Format Signage';
+        }
+
+        let total = base + Math.round(qty * 0.18);
+        if (express) total += 80;
+
+        recommendation.textContent = label;
+        price.textContent = '$' + total;
+      }
+
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          pills.forEach(function (p) {
+            p.className = 'product-pill rounded-full border border-white/10 text-white/60 px-5 py-2.5 text-xs uppercase tracking-widest';
+          });
+          this.className = 'product-pill rounded-full border border-[#2563eb] bg-[#2563eb]/10 text-[#60a5fa] px-5 py-2.5 text-xs uppercase tracking-widest';
+          selected = this.textContent.trim();
+          updateEstimate();
+        });
+      });
+
+      toggle.addEventListener('click', function () {
+        express = !express;
+        if (express) {
+          toggle.classList.remove('bg-white/10');
+          toggle.classList.add('bg-[#2563eb]');
+          dot.style.transform = 'translateX(1.5rem)';
+        } else {
+          toggle.classList.remove('bg-[#2563eb]');
+          toggle.classList.add('bg-white/10');
+          dot.style.transform = 'translateX(0)';
+        }
+        updateEstimate();
+      });
+
+      window.addEventListener('scroll', updateScroll);
+      range.addEventListener('input', updateRange);
+
+      updateScroll();
+      updateRange();
+      updateEstimate();
+    });
+  </script>
+
+</body></html>
