@@ -3,7 +3,7 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'digitalprint_db');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('BASE_URL', 'http://localhost/profile');
+define('BASE_URL', 'http://localhost/company_profile');
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT'] . '/uploads/');
 
 try {

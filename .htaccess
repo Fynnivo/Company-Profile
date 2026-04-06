@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /profile/
+RewriteBase /company_profile/
 
 # Block direct access to admin includes and config
 RewriteRule ^admin/includes/ - [F,L]
