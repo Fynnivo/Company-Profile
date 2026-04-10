@@ -136,68 +136,53 @@ $bg_colors = ['bg-[#eef2ff]','bg-[#ecfeff]','bg-[#f5f3ff]','bg-[#eff6ff]'];
 
     <!-- ===================== SERVICE DETAIL BODY ===================== -->
     <section class="mt-2">
-      <div class="max-w-[88rem] mx-auto grid grid-cols-1 xl:grid-cols-[0.7fr_1.3fr] gap-6 sm:gap-8 lg:gap-10 items-start">
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-12 items-start px-4 sm:px-6">
 
         <!-- Sidebar -->
-        <aside class="xl:sticky xl:top-28 space-y-4">
-          <div class="rounded-[1.5rem] border border-[#111827]/8 bg-white/80 backdrop-blur-sm p-6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.04)]">
+        <aside class="lg:sticky lg:top-28 space-y-4">
+          <div class="rounded-xl border border-[#111827]/8 bg-white/60 backdrop-blur-sm p-4 shadow-sm text-sm">
 
             <!-- Other services nav -->
-            <div class="mb-6">
-              <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3">Layanan Lainnya</p>
-              <div class="space-y-3">
+            <div class="mb-4">
+              <p class="text-xs uppercase tracking-[0.15em] text-[#2563eb] font-semibold mb-2">Layanan</p>
+              <div class="space-y-2">
                 <?php foreach ($other_services as $os): ?>
                 <a href="<?= BASE_URL ?>/layanan/<?= e($os['slug']) ?>"
-                  class="flex items-center gap-3 text-sm text-[#111827]/70 hover:text-[#2563eb] transition-colors group">
-                  <iconify-icon icon="<?= e($os['icon'] ?? 'solar:print-linear') ?>" class="text-base text-[#6b7280] group-hover:text-[#2563eb] transition-colors"></iconify-icon>
-                  <?= e($os['name']) ?>
+                  class="flex items-center gap-2 text-xs text-[#111827]/70 hover:text-[#2563eb] transition-colors group truncate">
+                  <iconify-icon icon="<?= e($os['icon'] ?? 'solar:print-linear') ?>" class="text-sm text-[#6b7280] group-hover:text-[#2563eb] transition-colors flex-shrink-0"></iconify-icon>
+                  <span class="truncate"><?= e($os['name']) ?></span>
                 </a>
                 <?php endforeach; ?>
               </div>
             </div>
 
-            <div class="pt-6 border-t border-[#111827]/8">
-              <p class="text-xs uppercase tracking-[0.25em] text-[#6b7280] mb-4">Info Layanan</p>
-              <div class="space-y-4">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-full border border-[#111827]/8 bg-[#f4f4f2] flex items-center justify-center text-[#2563eb]">
-                    <iconify-icon icon="solar:verified-check-linear" class="text-lg"></iconify-icon>
-                  </div>
-                  <div>
-                    <p class="text-xs uppercase tracking-widest text-[#6b7280] mb-1">Status</p>
-                    <p class="text-sm text-[#111827]">Tersedia & Aktif</p>
-                  </div>
+            <div class="pt-4 border-t border-[#111827]/8">
+              <p class="text-xs uppercase tracking-[0.15em] text-[#6b7280] font-semibold mb-3">Info</p>
+              <div class="space-y-3 text-xs">
+                <div>
+                  <p class="text-[#6b7280] tracking-wide uppercase font-medium">Status</p>
+                  <p class="text-[#111827] mt-0.5">Tersedia & Aktif</p>
                 </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-full border border-[#111827]/8 bg-[#f4f4f2] flex items-center justify-center text-[#2563eb]">
-                    <iconify-icon icon="solar:clock-circle-linear" class="text-lg"></iconify-icon>
-                  </div>
-                  <div>
-                    <p class="text-xs uppercase tracking-widest text-[#6b7280] mb-1">Pengerjaan</p>
-                    <p class="text-sm text-[#111827]">Cepat & Terukur</p>
-                  </div>
+                <div>
+                  <p class="text-[#6b7280] tracking-wide uppercase font-medium">Pengerjaan</p>
+                  <p class="text-[#111827] mt-0.5">Cepat & Terukur</p>
                 </div>
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-full border border-[#111827]/8 bg-[#f4f4f2] flex items-center justify-center text-[#2563eb]">
-                    <iconify-icon icon="solar:chat-round-dots-linear" class="text-lg"></iconify-icon>
-                  </div>
-                  <div>
-                    <p class="text-xs uppercase tracking-widest text-[#6b7280] mb-1">Konsultasi</p>
-                    <p class="text-sm text-[#111827]">Gratis & Langsung</p>
-                  </div>
+                <div>
+                  <p class="text-[#6b7280] tracking-wide uppercase font-medium">Konsultasi</p>
+                  <p class="text-[#111827] mt-0.5">Gratis & Langsung</p>
                 </div>
               </div>
             </div>
 
             <!-- WhatsApp CTA -->
-            <div class="pt-6 mt-2 border-t border-[#111827]/8">
+            <div class="pt-4 mt-2 border-t border-[#111827]/8">
               <a href="https://wa.me/<?= e(get_setting('whatsapp', $pdo)) ?>?text=Halo, saya ingin bertanya tentang layanan <?= urlencode($service['name']) ?>"
                 target="_blank"
-                class="flex items-center gap-3 rounded-[1.25rem] bg-[#25D366] p-4 hover:bg-[#128c7e] transition-all">
-                <iconify-icon icon="ic:baseline-whatsapp" class="text-2xl text-white"></iconify-icon>
+                class="flex items-center gap-2 rounded-lg bg-[#25D366] p-3 hover:bg-[#128c7e] transition-all text-xs">
+                <iconify-icon icon="ic:baseline-whatsapp" class="text-base text-white"></iconify-icon>
                 <div>
-                  <p class="text-xs text-white/80 uppercase tracking-widest">Chat Langsung</p>
-                  <p class="text-sm text-white font-semibold">Tanya via WhatsApp</p>
+                  <p class="text-white/80 uppercase tracking-widest text-[10px]">Chat</p>
+                  <p class="text-white font-semibold">WhatsApp</p>
                 </div>
               </a>
             </div>
@@ -205,82 +190,75 @@ $bg_colors = ['bg-[#eef2ff]','bg-[#ecfeff]','bg-[#f5f3ff]','bg-[#eff6ff]'];
         </aside>
 
         <!-- Main content -->
-        <div class="space-y-6">
+        <div class="max-w-[720px] mx-auto w-full">
 
           <!-- Service description card -->
-          <div class="rounded-[2rem] bg-white border border-[#111827]/6 shadow-[0_0.5rem_2rem_rgba(15,23,42,0.05)] overflow-hidden">
-            <div class="px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
-              <div class="max-w-3xl">
+          <div class="py-2">
+            <div class="article-content">
+              <p class="text-base sm:text-lg text-[#4b5563] leading-relaxed mb-8">
+                <?= e($service['description']) ?>
+              </p>
 
-                <!-- Long description (if you add it to DB later, render here) -->
-                <div class="article-content">
-                  <p class="text-base sm:text-lg text-[#4b5563] leading-8">
-                    <?= e($service['description']) ?>
-                  </p>
+              <div class="pt-8">
+                <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3 font-semibold">Mengapa Memilih Layanan Ini?</p>
+                <h2 class="text-2xl sm:text-3xl tracking-tight uppercase text-[#111827] mb-4 font-semibold" style="font-family:'Playfair Display',serif;">Kualitas yang Konsisten</h2>
+                <p class="text-base text-[#4b5563] leading-relaxed mb-6">
+                  Kami menggunakan peralatan cetak digital terkini untuk memastikan setiap hasil cetakan memenuhi standar kualitas tertinggi. Dari proofing hingga pengiriman akhir, setiap tahap dikontrol dengan ketat.
+                </p>
+              </div>
 
-                  <div class="pt-10">
-                    <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3">Mengapa Memilih Layanan Ini?</p>
-                    <h2 class="text-3xl sm:text-4xl tracking-tight uppercase text-[#111827] mb-5 font-semibold" style="font-family:'Playfair Display',serif;">Kualitas yang Konsisten</h2>
-                    <p class="text-base sm:text-lg text-[#4b5563] leading-8 mb-5">
-                      Kami menggunakan peralatan cetak digital terkini untuk memastikan setiap hasil cetakan memenuhi standar kualitas tertinggi. Dari proofing hingga pengiriman akhir, setiap tahap dikontrol dengan ketat.
-                    </p>
+              <!-- How it works steps -->
+              <div class="pt-8">
+                <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3 font-semibold">Proses Kami</p>
+                <h2 class="text-2xl sm:text-3xl tracking-tight uppercase text-[#111827] mb-6 font-semibold" style="font-family:'Playfair Display',serif;">Langkah Mudah</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <?php
+                  $steps = [
+                    ['num'=>'01','title'=>'Konsultasi','desc'=>'Diskusikan kebutuhan cetak Anda dengan tim kami secara gratis.'],
+                    ['num'=>'02','title'=>'Produksi','desc'=>'File Anda diproses dan dicetak dengan mesin berkualitas tinggi.'],
+                    ['num'=>'03','title'=>'Pengiriman','desc'=>'Hasil cetakan dikemas dengan aman dan dikirim ke lokasi Anda.'],
+                  ];
+                  foreach ($steps as $step):
+                  ?>
+                  <div class="rounded-lg border border-[#111827]/8 bg-[#f8f8f6] p-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-[#2563eb] mb-2 font-semibold"><?= $step['num'] ?></p>
+                    <p class="text-sm font-semibold text-[#111827] uppercase mb-2"><?= $step['title'] ?></p>
+                    <p class="text-xs text-[#6b7280] leading-relaxed"><?= $step['desc'] ?></p>
                   </div>
-
-                  <!-- How it works steps -->
-                  <div class="pt-10">
-                    <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3">Proses Kami</p>
-                    <h2 class="text-3xl sm:text-4xl tracking-tight uppercase text-[#111827] mb-6 font-semibold" style="font-family:'Playfair Display',serif;">Langkah Mudah</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <?php
-                      $steps = [
-                        ['num'=>'01','title'=>'Konsultasi','desc'=>'Diskusikan kebutuhan cetak Anda dengan tim kami secara gratis.'],
-                        ['num'=>'02','title'=>'Produksi','desc'=>'File Anda diproses dan dicetak dengan mesin berkualitas tinggi.'],
-                        ['num'=>'03','title'=>'Pengiriman','desc'=>'Hasil cetakan dikemas dengan aman dan dikirim ke lokasi Anda.'],
-                      ];
-                      foreach ($steps as $step):
-                      ?>
-                      <div class="rounded-[1.25rem] border border-[#111827]/8 bg-[#f8f8f6] p-5">
-                        <p class="text-xs uppercase tracking-[0.2em] text-[#2563eb] mb-3"><?= $step['num'] ?></p>
-                        <p class="text-base font-semibold text-[#111827] uppercase mb-2"><?= $step['title'] ?></p>
-                        <p class="text-sm text-[#6b7280] leading-6"><?= $step['desc'] ?></p>
-                      </div>
-                      <?php endforeach; ?>
+                  <?php endforeach; ?>
                     </div>
-                  </div>
+                </div>
 
-                  <!-- Final CTA box -->
-                  <div class="pt-10">
-                    <div class="rounded-[1.5rem] bg-[#111827] p-6 sm:p-8">
-                      <p class="text-xs uppercase tracking-[0.25em] !text-[#60a5fa] mb-4">Siap Memulai?</p>
-                      <p class="text-lg sm:text-xl !text-white leading-relaxed font-semibold">
-                        Hubungi kami sekarang dan dapatkan penawaran terbaik untuk kebutuhan cetak <?= e($service['name']) ?> Anda.
-                      </p>
-                      <div class="flex flex-wrap gap-4 mt-6">
-                        <a href="<?= BASE_URL ?>/kontak" class="rounded-full bg-[#2563eb] !text-white px-6 py-3 text-sm uppercase tracking-widest hover:bg-[#1c52c9] hover:text-[#111827] transition-all">
-                          Hubungi Kami
-                        </a>
-                        <a href="https://wa.me/<?= e(get_setting('whatsapp', $pdo)) ?>" target="_blank"
-                          class="rounded-full border border-white/20 !text-white px-6 py-3 text-sm uppercase tracking-widest hover:border-[#25D366] hover:text-[#25D366] transition-all flex items-center gap-2">
-                          <iconify-icon icon="ic:baseline-whatsapp" class="text-lg"></iconify-icon>
-                          WhatsApp
-                        </a>
-                      </div>
+                <!-- Final CTA box -->
+                <div class="pt-8">
+                  <div class="rounded-lg bg-[#111827] p-6 sm:p-8">
+                    <p class="text-xs uppercase tracking-[0.25em] !text-[#60a5fa] mb-4">Siap Memulai?</p>
+                    <p class="text-lg !text-white leading-relaxed font-semibold">
+                      Hubungi kami sekarang dan dapatkan penawaran terbaik untuk kebutuhan cetak <?= e($service['name']) ?> Anda.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-6">
+                      <a href="<?= BASE_URL ?>/kontak" class="rounded-full !bg-[#2563eb] !text-white px-6 py-3 text-sm uppercase tracking-widest hover:bg-[#1c52c9] transition-all">
+                        Hubungi Kami
+                      </a>
+                      <a href="https://wa.me/<?= e(get_setting('whatsapp', $pdo)) ?>" target="_blank"
+                        class="rounded-full border !border-white/20 !text-white px-6 py-3 text-sm uppercase tracking-widest hover:border-[#25D366] hover:text-[#25D366] transition-all flex items-center gap-2">
+                        <iconify-icon icon="ic:baseline-whatsapp" class="text-lg"></iconify-icon>
+                        WhatsApp
+                      </a>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- ===================== OTHER SERVICES ===================== -->
     <?php if (!empty($other_services)): ?>
-    <section class="bg-[#eef1f5] pt-16 sm:pt-20 px-4 sm:px-6 pb-16 sm:pb-20 rounded-[2rem] sm:rounded-[2.5rem] mt-6 sm:mt-8">
-      <div class="max-w-[88rem] mx-auto">
+    <section class="bg-[#eef1f5] mt-16 sm:mt-20 px-4 sm:px-6 py-16 sm:py-20 rounded-2xl">
+      <div class="max-w-[1200px] mx-auto">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3">Eksplorasi Lebih</p>
@@ -322,7 +300,7 @@ $bg_colors = ['bg-[#eef2ff]','bg-[#ecfeff]','bg-[#f5f3ff]','bg-[#eff6ff]'];
 
     <!-- Related Articles -->
     <?php if (!empty($related_articles)): ?>
-    <section class="mt-6 sm:mt-8 max-w-[88rem] mx-auto">
+    <section class="mt-16 mb-10 sm:mt-20 max-w-[1200px] mx-auto px-4 sm:px-6">
       <div class="flex items-end justify-between mb-8">
         <div>
           <p class="text-xs uppercase tracking-[0.25em] text-[#2563eb] mb-3">Dari Blog Kami</p>

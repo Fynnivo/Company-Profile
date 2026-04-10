@@ -39,6 +39,134 @@ $current_url  = BASE_URL . $_SERVER['REQUEST_URI'];
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
+
+  <!-- Article content styling -->
+  <style>
+    .article-content {
+      color: #2d3748;
+      line-height: 1.8;
+      font-size: 1.125rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.25rem 0;
+      color: #111827;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+    }
+    .article-content h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: #111827;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.01em;
+    }
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 1.75rem 0 0.875rem 0;
+      color: #1f2937;
+    }
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      font-weight: 700;
+      margin: 1.25rem 0 0.625rem 0;
+      color: #374151;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+      color: #2d3748;
+    }
+    .article-content ul,
+    .article-content ol {
+      margin: 1.25rem 0 1.25rem 2rem;
+      color: #2d3748;
+    }
+    .article-content li {
+      margin-bottom: 0.625rem;
+      color: #2d3748;
+    }
+    .article-content a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid #2563eb;
+      transition: all 0.2s ease;
+    }
+    .article-content a:hover {
+      background-color: rgba(37, 99, 235, 0.1);
+    }
+    .article-content strong,
+    .article-content b {
+      font-weight: 700;
+      color: #111827;
+    }
+    .article-content em,
+    .article-content i {
+      font-style: italic;
+      color: #2d3748;
+    }
+    .article-content blockquote {
+      border-left: 3px solid #2563eb;
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #4b5563;
+      background-color: rgba(37, 99, 235, 0.03);
+      padding: 1rem 1.5rem;
+      border-radius: 0.25rem;
+    }
+    .article-content code {
+      background-color: #f3f4f6;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95em;
+      color: #dc2626;
+    }
+    .article-content pre {
+      background-color: #1f2937;
+      color: #f3f4f6;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .article-content pre code {
+      background-color: transparent;
+      color: #f3f4f6;
+      padding: 0;
+    }
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+    }
+    .article-content th,
+    .article-content td {
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    .article-content th {
+      background-color: #f9fafb;
+      font-weight: 700;
+      color: #111827;
+    }
+    .article-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 0.5rem 2rem rgba(15, 23, 42, 0.08);
+    }
+  </style>
 </head>
 <body class="bg-[#f4f4f2] text-[#1f2937] antialiased overflow-x-hidden selection:bg-[#2563eb] selection:text-white" style="font-family:'Nunito',sans-serif;">
 

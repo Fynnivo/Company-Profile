@@ -1,10 +1,6 @@
 <?php
 require_once __DIR__ . '/../bootstrap.php';
 
-$page_title = 'Tambah Artikel';
-$breadcrumb = 'Buat artikel baru';
-require_once __DIR__ . '/../includes/admin-header.php';
-
 $errors = [];
 $d = ['title'=>'','slug'=>'','category'=>'','excerpt'=>'','content'=>'',
       'meta_title'=>'','meta_description'=>'','status'=>'draft','thumbnail'=>null];
@@ -51,6 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Existing categories for datalist
 $cats = $pdo->query("SELECT DISTINCT category FROM articles WHERE category IS NOT NULL AND category!='' ORDER BY category")
             ->fetchAll(PDO::FETCH_COLUMN);
+
+// Now include header AFTER processing
+$page_title = 'Tambah Artikel';
+$breadcrumb = 'Buat artikel baru';
+require_once __DIR__ . '/../includes/admin-header.php';
 ?>
 
 <?php if ($errors): ?>
@@ -88,12 +89,12 @@ $cats = $pdo->query("SELECT DISTINCT category FROM articles WHERE category IS NO
         <p class="text-xs text-[#94a3b8] mt-1">Kosongkan untuk generate otomatis.</p>
       </div>
 
-      <!-- Content (TinyMCE) -->
+      <!-- Content (TinyMCE Editor) -->
       <div class="bg-white rounded-2xl border border-[#e2e8f0] p-5">
         <label class="block text-xs uppercase tracking-widest text-[#64748b] mb-3">
           Konten <span class="text-red-400">*</span>
         </label>
-        <textarea name="content" id="tinymce-content"><?= htmlspecialchars($d['content']) ?></textarea>
+        <textarea name="content" id="tinymce-editor"><?= htmlspecialchars($d['content']) ?></textarea>
         <?php if (isset($errors['content'])): ?>
         <p class="text-xs text-red-500 mt-2"><?= e($errors['content']) ?></p>
         <?php endif; ?>
@@ -192,20 +193,69 @@ $cats = $pdo->query("SELECT DISTINCT category FROM articles WHERE category IS NO
   </div>
 </form>
 
-<!-- TinyMCE (free CDN — no API key needed for basic use) -->
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- TinyMCE WYSIWYG Editor -->
+<script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js"></script>
 <script>
 tinymce.init({
-  selector: '#tinymce-content',
-  height: 420,
-  menubar: false,
-  promotion: false,
+  selector: '#tinymce-editor',
+  height: 400,
   branding: false,
-  plugins: 'lists link image table code',
-  toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | table | code',
-  content_style: "body{font-family:'Nunito',sans-serif;font-size:15px;line-height:1.8;color:#374151;}",
-  images_upload_url: '<?= BASE_URL ?>/admin/articles/upload-image.php',
+  menubar: true,
+  plugins: ['advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'searchreplace', 'visualblocks', 'code', 'fullscreen', 'insertdatetime',
+            'media', 'table', 'help'],
+  toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | removeformat | fullscreen code',
+  relative_urls: false,
   automatic_uploads: true,
+  images_upload_url: '<?= BASE_URL ?>/admin/articles/upload-image.php',
+  image_upload_handler: function (blobInfo, success, failure) {
+    const formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+    
+    fetch('<?= BASE_URL ?>/admin/articles/upload-image.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.location) {
+        success(data.location);
+      } else {
+        failure('Upload failed: ' + (data.error || 'Unknown error'));
+      }
+    })
+    .catch(err => failure('Upload error: ' + err.message));
+  },
+  file_picker_types: 'image',
+  file_picker_callback: function (callback, value, meta) {
+    let input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.onchange = function () {
+      let file = this.files[0];
+      let formData = new FormData();
+      formData.append('file', file);
+      
+      fetch('<?= BASE_URL ?>/admin/articles/upload-image.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.location) {
+          callback(data.location, { title: file.name });
+        } else {
+          alert('Upload failed: ' + (data.error || 'Unknown error'));
+        }
+      })
+      .catch(err => alert('Upload error: ' + err.message));
+    };
+    input.click();
+  }
+});
+
+document.querySelector('form').addEventListener('submit', function() {
+  tinymce.triggerSave();
 });
 
 // Auto-generate slug from title

@@ -95,18 +95,28 @@ function upload_image(array $file, string $folder = 'articles'): string|false {
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
     $filename = $folder . '_' . time() . '_' . rand(100, 999) . '.' . $ext;
     
-    // Perbaikan: Gunakan path absolut dari root project
-    $upload_root = dirname(__DIR__) . '/uploads/';
+    // Get upload directory path
+    $upload_root = __DIR__ . '/../uploads/';
     $dir = $upload_root . $folder . '/';
     
-    // Buat folder jika belum ada
+    // Ensure directory exists and is writable
     if (!is_dir($dir)) {
-        mkdir($dir, 0777, true);
+        @mkdir($dir, 0777, true);
+    }
+    
+    // Check if directory is writable
+    if (!is_writable($dir)) {
+        @chmod($dir, 0777);
+        // If still not writable, return false
+        if (!is_writable($dir)) {
+            return false;
+        }
     }
     
     $dest = $dir . $filename;
     
     if (move_uploaded_file($file['tmp_name'], $dest)) {
+        @chmod($dest, 0666); // Make file writable
         return 'uploads/' . $folder . '/' . $filename;
     }
     
@@ -157,4 +167,32 @@ function render_flash(): string {
         <iconify-icon icon="' . $iconName . '" class="text-lg ' . $iconColor . '"></iconify-icon>
         <p class="text-sm">' . e($msg) . '</p>
     </div>';
+}
+
+/**
+ * Display article content safely (HTML from TinyMCE)
+ * Simple sanitization to prevent XSS
+ */
+function display_content(string $html_content): string {
+    if (empty($html_content)) return '';
+    
+    // Remove any script tags and dangerous attributes
+    $html = preg_replace('/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i', '', $html_content);
+    $html = preg_replace('/javascript:/i', '', $html);
+    $html = preg_replace('/on\w+\s*=/i', '', $html);
+    
+    // Remove dangerous event handlers
+    $dangerous = ['onerror', 'onload', 'onclick', 'onmouseover', 'onkeydown', 'onkeyup'];
+    foreach ($dangerous as $event) {
+        $html = preg_replace('/' . $event . '\s*=/i', '', $html);
+    }
+    
+    return $html;
+}
+
+/**
+ * Simplified alias for display_content (backward compatibility)
+ */
+function editor_js_to_html(string $content): string {
+    return display_content($content);
 }
