@@ -29,14 +29,14 @@
 
         <div>
           <h4 class="text-xs uppercase tracking-[0.2em] text-[#60a5fa] mb-6">Layanan</h4>
+          <ul class="space-y-3">
           <?php
             $services_footer = $pdo->query("SELECT name, slug FROM services WHERE is_active = 1 ORDER BY sort_order LIMIT 5")->fetchAll();
             foreach ($services_footer as $s):
           ?>
-          <ul class="space-y-3">
             <li><a href="<?= BASE_URL ?>/layanan-detail?slug=<?= e($s['slug']) ?>" class="text-base text-white/50 hover:text-[#60a5fa] transition-colors"><?= e($s['name']) ?></a></li>
-          </ul>
           <?php endforeach; ?>
+          </ul>
         </div>
 
         <div>
